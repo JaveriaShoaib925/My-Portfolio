@@ -16,14 +16,17 @@
     --text-color: #333;
     --bg-color: #fdfdfd;
     --white-color: #fdfdfd;
-    --main-color: rgb(6, 82, 82);   
+    --main-color: rgb(69, 126, 126);   
     --shadow-color: rgb(0, 0, 0, .2);
+    --neon-box-shadow: 0 0 .5rem #12f7ff;
+    --big-font: 2.5rem;
+    --normal-font: 2rem;
 }
 
 .dark-mode {
     --shadow-color: rgb(0, 0, 0, .7);
     --text-color: #fdfdfd;
-    --bg-color: #0b061f;
+    --bg-color: #1e1c24;
 }
 
 html{
@@ -408,7 +411,7 @@ span{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
-    gap: 2.5rem;
+    gap: 2rem;
 }
 
 .portfolio-container .portfolio-box{
@@ -417,6 +420,7 @@ span{
     border-radius: 2rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
     overflow: hidden;
+    width: 99%;
 }
 
 .portfolio-box img{
@@ -777,6 +781,12 @@ span{
     .portfolio .portfolio-container {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .skill-main{
+        grid-template-columns: 1fr;
+        position: fixed;
+        margin-right: 250px;
+    }
 }
 
 @media (max-width: 617px) {
@@ -837,6 +847,20 @@ span{
 
 
 /* Skills section css */
+.main-text{
+    color: var(--text-color);
+    margin-bottom: 6rem;
+    text-align: center;
+    width: 100%;
+}
+
+.main-text h2{
+    font-weight: 700;
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+
 .skills{
     background-color: var(--bg-color);
 }
@@ -847,6 +871,10 @@ span{
     grid-template-columns: repeat(2,1fr);
     grid-row-gap: 30px;
     grid-column-gap: 50px;
+    color: var(--text-color);
+    font-size: 15px;
+    position: absolute;
+    margin-left: 250px;
 }
 
 .skill-bar{
@@ -855,22 +883,140 @@ span{
 
 .skill-main h3{
     margin-bottom: 2rem;
-    font-size: var(--text-color);
+    font-size: var(--normal-font);
     text-align: center;
+    color: var(--text-color);
 }
 
-.skill-left .skill-bar .info{
+.skill-center .skill-bar .info{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
 }
 
-.skill-left .skill-bar .bar{
+.skill-center .skill-bar .bar{
     width: 100%;
     height: 10px;
-    background-color: var(--bg-color);
+    background-color: var(--text-color);
     border-radius: 25px;
     margin-top: 10px;
     position: relative;
 }
+
+.skill-bar .bar span {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background: rgb(166, 230, 255);
+    border-radius: 25px;
+    box-shadow: var(--neon-box-shadow);
+}
+
+.skill-bar .bar .html{
+    width: 85%;
+    animation: html 2s;
+}
+
+.skill-bar .bar .figma{
+    width: 90%;
+    animation: figma 3s;
+}
+
+.skill-bar .bar .javascript{
+    width: 70%;
+    animation: javascript 4s;
+}
+
+.skill-bar .bar .css{
+    width: 80%;
+    animation: css 5s;
+}
+
+/* KEYFRAME */
+@keyframes html {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 85%;
+    }
+}
+
+@keyframes figma {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 90%;
+    }
+}
+
+@keyframes javascript {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 70%;
+    }
+}
+
+@keyframes css {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 80%;
+    }
+}
+
+/* Skill right */
+/* .professional{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.box1{
+    position: relative;
+    margin: 10px 0;
+    flex: 1 1 15rem;
+}
+
+.box1 .text{
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.box1 .text big{
+    font: 400;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate((-50%, -50%));
+}
+
+.box1 .text small{
+    display: block;
+    font-weight: 600;
+}
+
+.circle2{
+    width: 100%;
+    height: 120px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border: 2px solid #fff;
+}
+
+.circle2 .points{
+    width: 2px;
+    height: 10px;
+    background: var(--text-color);
+    position: absolute;
+    border-radius: 3px;
+    transform: rotate(calc(var(--i)*120deg))translateY(-45px);
+} */
