@@ -74,6 +74,10 @@ body{
     margin-right: 3.5rem;
 }
 
+.navbar a:hover{
+    color: var(--neon-box-shadow);
+}
+
 .header.sticky .navbar a{
     color: var(--text-color);
 }
@@ -784,8 +788,6 @@ span{
 
     .skill-main{
         grid-template-columns: 1fr;
-        position: fixed;
-        margin-right: 250px;
     }
 }
 
@@ -873,8 +875,7 @@ span{
     grid-column-gap: 50px;
     color: var(--text-color);
     font-size: 15px;
-    position: absolute;
-    margin-left: 250px;
+    /* margin-left: 28rem; */
 }
 
 .skill-bar{
